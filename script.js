@@ -3,6 +3,9 @@ const inputs = document.querySelectorAll('.code');
 
 inputs.forEach((input, idx) => {
     input.addEventListener('keydown', (e) => {
+		inputs.forEach(i => i.classList.remove('focused'));
+
+        input.classList.add('focused');
         if (e.key === "Backspace") {
             input.value = ''; 
             if (idx > 0) {
