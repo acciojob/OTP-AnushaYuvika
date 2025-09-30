@@ -1,6 +1,8 @@
 //your JS code here. If required.
 const inputs = document.querySelectorAll('.code');
 
+document.getElementById('verification_subtext').textContent = "Enter the 6-digit code sent to your mobile/email.";
+
 inputs.forEach((input, idx) => {
     input.addEventListener('keydown', (e) => {
 		inputs.forEach(i => i.classList.remove('focused'));
@@ -26,3 +28,4 @@ inputs.forEach((input, idx) => {
     });
 });
 
+inputs[0].focus();
