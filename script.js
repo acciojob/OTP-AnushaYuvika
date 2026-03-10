@@ -1,7 +1,8 @@
 //your JS code here. If required.
 const codes = document.querySelectorAll(".code");
 
-codes.forEach((input, index) => {
+codes.forEach((input, index) => { 
+	// forward Key
 	input.addEventListener("input", () => {
 		if(input.value !== "") {
 			const next = input.nextElementSibling;
@@ -12,6 +13,7 @@ codes.forEach((input, index) => {
 		}
 	})
 
+	// Backward Key
 	input.addEventListener("keydown", (e) => {
 		if(e.key === "Backspace" && input.value === "") {
 			const prev = input.previousElementSibling;
@@ -23,6 +25,8 @@ codes.forEach((input, index) => {
 	})
 })
 
+
+// copy paste OTP
 codes[0].addEventListener("paste", (e) => {
 
   const data = e.clipboardData.getData("text").split("");
@@ -32,4 +36,5 @@ codes[0].addEventListener("paste", (e) => {
   });
 
 });
+
 codes[0].focus();
